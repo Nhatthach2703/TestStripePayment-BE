@@ -19,9 +19,9 @@ router.post('/create-payment-intent', async (req, res) => {
       // 2. Tạo PaymentIntent gắn với customer
       const paymentIntent = await stripe.paymentIntents.create({
         amount,
-        currency: 'usd',
+        currency: 'vnd', // Thay đổi theo loại tiền tệ bạn muốn ví dụ vnd, usd
         customer: customer.id,
-        payment_method_types: ['card'],
+        payment_method_types: ['card'], // Thay đổi theo loại phương thức thanh toán bạn muốn
         description: description || 'No description',
       });
   
